@@ -14,8 +14,11 @@
 
 ---
 
+## Eklenti ile alakalı birkaç ekran görüntüsü / A few screenshots related to the extension
+
 <p align="center">
-    <img src="dontefı.png" alt="Mail Düzenleyici Chrome Eklentisi Arayüzü" width="300"/>
+    <img src="dontefı.png" alt="Mail Düzenleyici Chrome Eklentisi Arayüzü" width="300" style="margin-right: 10px;"/> 
+    <img src="dontefı1.png" alt="Mail Düzenleyici Chrome Eklentisi Tanıtım Görseli" width="300"/>
 </p>
 
 ### 🚀 E-posta İçeriklerinizi Yapay Zeka ile Dönüştürün: Tek Tıkla Düzenleme Gücü\! (TR)
