@@ -1,4 +1,4 @@
-# E-Posta İçeriklerinizi Düzenlemek İçin Basit Bir Google Chrome Eklentisi/ A Simple Google Chrome Extension for Editing Email Content
+# E-Posta İçeriklerinizi Düzenlemek İçin Basit Bir Google Chrome Eklentisi
 
 <p align="left"> 
     <a href="https://www.instagram.com/umutyalcine?igsh=c21xZ2psNG56cHN5" target="_blank">
@@ -13,6 +13,10 @@
 </p>
 
 ---
+
+<p align="center">
+    <img src="dontefı.png" alt="Mail Düzenleyici Chrome Eklentisi Arayüzü" width="300"/>
+</p>
 
 ### 🚀 E-posta İçeriklerinizi Yapay Zeka ile Dönüştürün: Tek Tıkla Düzenleme Gücü\! (TR)
 
