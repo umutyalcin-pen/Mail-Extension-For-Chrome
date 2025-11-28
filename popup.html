@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Düzenleyici</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h3 id="appTitle" style="cursor: pointer;" title="GitHub Profiline Git">Mail Düzenleyici</h3>
+      <button id="settingsBtn" class="icon-btn settings-trigger" title="Ayarlar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+          </path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Settings Panel -->
+    <div id="settingsPanel" class="settings-panel hidden">
+      <label for="apiKey">Gemini API Anahtarı</label>
+      <input type="password" id="apiKey" placeholder="API Anahtarınızı girin">
+      <div class="settings-actions">
+        <button id="testApiBtn" class="secondary-btn">Bağlantıyı Test Et</button>
+        <button id="saveKeyBtn" class="primary-btn" style="width: auto;">Kaydet</button>
+        <button id="closeSettingsBtn" class="text-btn">Kapat</button>
+      </div>
+      <p class="info-text">Google AI Studio'dan anahtar alabilirsiniz.</p>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent">
+      <label>İçeriğiniz</label>
+      <textarea id="inputText" placeholder="Örn: Para nerede kaldı ödesene..."></textarea>
+
+      <div class="tone-selector">
+        <label>Mod</label>
+        <div class="chips">
+          <div class="chip active" data-tone="kurumsal">Kurumsal</div>
+          <div class="chip" data-tone="arkadasca">Arkadaşça</div>
+          <div class="chip" data-tone="resmi">Resmi</div>
+        </div>
+      </div>
+
+      <button id="rewriteBtn" class="primary-btn">
+        <span class="btn-text">Düzenle</span>
+      </button>
+
+      <div id="outputArea" class="result-box hidden" style="margin-top: 20px;">
+        <p id="outputText"></p>
+        <button id="copyBtn" class="icon-btn" title="Kopyala">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>
