@@ -1,0 +1,43 @@
+# E-Posta İçeriklerinizi Düzenlemek İçin Basit Bir Google Chrome Eklentisi
+
+<p align="left"> 
+    <a href="https://www.instagram.com/umutyalcine?igsh=c21xZ2psNG56cHN5" target="_blank">
+        <img src="https://img.shields.io/badge/Instagram-@umutyalcine-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram @umutyalcine" />
+    </a>&nbsp;&nbsp; <a href="https://www.instagram.com/1yildapentesterolcam?igsh=MTU0dmRwbDNwMXlvcw==" target="_blank">
+        <img src="https://img.shields.io/badge/Instagram-@1yildapentesterolcam-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram @1yildapentesterolcam" />
+    </a>&nbsp;&nbsp; <a href="https://open.substack.com/pub/abqlinux?utm_source=share&utm_medium=android&r=6dmoxh" target="_blank">
+        <img src="https://img.shields.io/badge/Substack-abqlinux-FF6719?style=for-the-badge&logo=substack&logoColor=white" alt="Substack abqlinux" />
+    </a>&nbsp;&nbsp; <a href="https://1000kitap.com/Meineliebewittgenstein" target="_blank">
+        <img src="https://img.shields.io/badge/1000Kitap-Meineliebewittgenstein-795548?style=for-the-badge" alt="1000Kitap Meineliebewittgenstein" />
+    </a>
+</p>
+
+---
+
+### 🚀 E-posta İçeriklerinizi Yapay Zeka ile Dönüştürün: Tek Tıkla Düzenleme Gücü\!
+
+Yaptığım bu Chrome eklentisi ile e-posta içeriklerinizi yepyeni bir boyuta taşıyorum. Sadece **tek bir tıklamayla**, yapay zekanın gücünü kullanarak e-postalarınızı 3 farklı modda düzenleyebilirsiniz:
+
+* **Resmi:** Resmi yazışmalarınız için e-postalarınızı daha ciddi ve kurumsal bir dil ile yazın.
+* **Arkadaşça:** Daha samimi ve kişisel e-postalar için yazı dilinizi yumuşatın.
+* **Kurumsal:** Kurumsal E-Posta içerikleri yazmanız gerektiğinde eksiklerinizi giderecek mod.
+
+Bu eklenti, zamandan tasarruf etmenizi sağlarken, e-posta iletişimlerinizin etkisini artırmanıza yardımcı oluyor.
+
+---
+
+### 💻 Proje Teknolojileri:
+
+<p align="left">
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+    </a>
+    <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
+    </a>
+    <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
+    </a>
+</p>
+
+---
