@@ -8,7 +8,6 @@ const closeSettingsBtn = document.getElementById('closeSettingsBtn');
 let selectedTone = 'kurumsal';
 let apiKey = '';
 
-// DOM Elements
 const chips = document.querySelectorAll('.chip');
 const rewriteBtn = document.getElementById('rewriteBtn');
 const githubBtn = document.getElementById('githubBtn');
@@ -20,32 +19,31 @@ const btnText = document.querySelector('.btn-text');
 
 const appTitle = document.getElementById('appTitle');
 
-// GitHub Link via Title
+
 if (appTitle) {
     appTitle.addEventListener('click', () => {
         chrome.tabs.create({ url: 'https://github.com/umutyalcin-pen' });
     });
 }
 
-// GitHub Link (Legacy button support if needed, though button is removed)
 if (githubBtn) {
     githubBtn.addEventListener('click', () => {
         chrome.tabs.create({ url: 'https://github.com/umutyalcin-pen' });
     });
 }
 
-// Load API Key
+
 chrome.storage.local.get(['geminiApiKey'], (result) => {
     if (result.geminiApiKey) {
         apiKey = result.geminiApiKey;
         apiKeyInput.value = apiKey;
     } else {
-        // Show settings if no key
+
         toggleSettings(true);
     }
 });
 
-// Settings Logic
+
 settingsBtn.addEventListener('click', () => toggleSettings(true));
 closeSettingsBtn.addEventListener('click', () => toggleSettings(false));
 
@@ -55,7 +53,7 @@ saveKeyBtn.addEventListener('click', () => {
         chrome.storage.local.set({ geminiApiKey: key }, () => {
             apiKey = key;
             toggleSettings(false);
-            // Visual feedback could be added here
+
         });
     }
 });
@@ -70,7 +68,7 @@ function toggleSettings(show) {
     }
 }
 
-// Tone Selection
+
 chips.forEach(chip => {
     chip.addEventListener('click', () => {
         chips.forEach(c => c.classList.remove('active'));
@@ -79,7 +77,7 @@ chips.forEach(chip => {
     });
 });
 
-// Rewrite Action
+
 rewriteBtn.addEventListener('click', async () => {
     const text = inputText.value.trim();
     if (!text) return;
@@ -105,7 +103,7 @@ rewriteBtn.addEventListener('click', async () => {
     }
 });
 
-// Copy Action
+
 copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(outputText.textContent).then(() => {
         const originalIcon = copyBtn.innerHTML;
@@ -131,7 +129,6 @@ function setLoading(isLoading) {
 
 const testApiBtn = document.getElementById('testApiBtn');
 
-// Test API Connection
 if (testApiBtn) {
     testApiBtn.addEventListener('click', async () => {
         const key = apiKeyInput.value.trim();
@@ -180,7 +177,7 @@ async function callGeminiAPI(text, tone) {
     for (const model of modelsToTry) {
         try {
             console.log(`Trying model: ${model}`);
-            // Always use v1beta as it is the most reliable for AI Studio keys
+
             const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
             let prompt = "";
@@ -225,11 +222,11 @@ async function callGeminiAPI(text, tone) {
         } catch (error) {
             console.warn(`Model ${model} failed:`, error);
             lastError = error;
-            // Continue to next model
+
         }
     }
 
-    // If all hardcoded models failed, try to find ANY working model dynamically
+
     try {
         console.log("Hardcoded models failed. Attempting auto-discovery...");
         const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
@@ -239,26 +236,22 @@ async function callGeminiAPI(text, tone) {
 
         if (!listData.models) throw new Error("Model listesi alınamadı.");
 
-        // Filter models that support generateContent
+        
         const contentModels = listData.models.filter(m =>
             m.supportedGenerationMethods &&
             m.supportedGenerationMethods.includes("generateContent")
         );
 
-        // Sort models to prioritize: 
-        // 1. Flash (Fast, high quota)
-        // 2. Stable Pro
-        // 3. Others
-        // 4. Experimental (exp) - put at the end
+       
         contentModels.sort((a, b) => {
             const nameA = a.name.toLowerCase();
             const nameB = b.name.toLowerCase();
 
             const getScore = (name) => {
-                if (name.includes('exp')) return 0; // Lowest priority
-                if (name.includes('flash')) return 3; // Highest priority
-                if (name.includes('pro') && !name.includes('1.0')) return 2; // High priority
-                return 1; // Standard
+                if (name.includes('exp')) return 0; 
+                if (name.includes('flash')) return 3; 
+                if (name.includes('pro') && !name.includes('1.0')) return 2; 
+                return 1; 
             };
 
             return getScore(nameB) - getScore(nameA);
@@ -270,7 +263,7 @@ async function callGeminiAPI(text, tone) {
             const modelName = workingModel.name.replace('models/', '');
             console.log(`Auto-discovered working model: ${modelName}`);
 
-            // Try one last time with the discovered model
+ 
             const url = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`;
 
             let prompt = "";
